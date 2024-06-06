@@ -1,0 +1,92 @@
+<html>
+<head>
+     <title>Anagram Check App by Anushka</title>
+<style>
+    *{font-size:40px; font-family:Ink free;}
+    body{background-color:#FFE4E1;}
+    
+</style>
+</head>
+
+<body>
+<center>
+    <h1>Anagram Checker App</h1>
+    <form onsubmit="check()">
+    <input type="text" placeholder="Enter first string" id="str1"/>
+    <br></br>
+<input type="text" placeholder="Enter second string" id="str2"/>
+    <br></br>
+    <input type="submit"/>
+      <br></br>
+<h2 id="msg"/>
+</form>
+
+
+<script>
+   function check()
+{
+   event.preventDefault();
+   let str1=document.getElementById("str1");
+   let str2=document.getElementById("str2");
+    let msg=document.getElementById("msg");
+ 
+
+if(str1.value=="")
+{
+alert("First String is empty!");
+msg.innerHTML="";
+str1.value="";
+str1.focus();
+return;
+}
+
+
+
+if(str2.value=="")
+{
+alert("Second String is empty!");
+msg.innerHTML="";
+str2.value="";
+str2.focus();
+return;
+}
+
+
+
+
+
+
+let s1 =str1.value.toLowerCase();
+let s2 =str2.value.toLowerCase();
+
+
+
+//logic 2
+let n= s1.split("").sort().join("");
+let m= s2.split("").sort().join("");
+
+
+
+if(n==m)
+    msg.innerHTML="Yes! Strings are anagram";
+
+else
+      msg.innerHTML="No, Strings are not anagram";
+
+}
+
+      </script>
+
+</center>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
